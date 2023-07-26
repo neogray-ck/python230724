@@ -32,5 +32,16 @@ f.close()
 #파일 읽기
 f = open("c:\\work\\demo.txt", "rt", encoding="utf-8")
 result = f.read()
+result = result.replace("\n", "")
+print("\n---라인단위---")
+f.seek(0)
+print(f.readline(), end="END") # "end=" 구분은 프린트 마지막에 붙이는 내용을 명시
+print(f.readline(), end="")
+print("\n---리스트로 받기---")
+f.seek(0)
+result=f.readlines()
+result[0] = result[0].strip()
+print(result)
+
 f.close()
 print(result)
