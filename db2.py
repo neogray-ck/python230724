@@ -1,8 +1,8 @@
-# db1.py
+# db2.py
 import sqlite3
 
 # 연결 객체 생성
-con = sqlite3.connect(":memory:") # 테이블을 메모리에 생성
+con = sqlite3.connect("c:\\work\\sample.db")
 
 # 커서 객체
 cur = con.cursor()
@@ -30,13 +30,7 @@ cur.executemany("INSERT INTO PHONEBOOK (NAME, PHONENUM) VALUES (?, ?);", datalis
 
 # 검색 구문
 cur.execute("SELECT * FROM PHONEBOOK;")
-
-print("\n---fetchone()---")
-print(cur.fetchone())
-print("\n---fetchmany(2)---")
-print(cur.fetchmany(2))
-print("\n---fetchall()---")
 print(cur.fetchall())
 
-for row in cur:
-    print(row)
+#작업 완료
+con.commit()
