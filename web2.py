@@ -20,7 +20,7 @@ for post in posts:
     title = title.text.replace("\n", "").strip()
     price = price.text.replace("\n", "")
     addr  = addr.text.replace("\n", "")
-    print("{0}, {1}, {2}".format(title, price, addr))
+    print("{0:<30}, {1}, {2}".format(title, price, addr))
     f.write(f"{title}, {price}, {addr}\n")
 
 f.close()
