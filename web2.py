@@ -1,9 +1,9 @@
 # web2.py
 # 웹서버와 통신
 import requests
-
 # 크롤링
 from bs4 import BeautifulSoup
+
 
 url = "https://www.daangn.com/"
 response = requests.get(url)
